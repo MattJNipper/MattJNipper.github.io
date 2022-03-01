@@ -2055,7 +2055,7 @@ input, select, textarea {
 			display: block;
 			height: 100%;
 			left: 0;
-			opacity: 1;
+			opacity: 0.5;
 			position: absolute;
 			top: 0;
 			width: 100%;
@@ -2073,13 +2073,13 @@ input, select, textarea {
 				border-radius: 0.35em;
 				border: solid 3px rgba(255, 255, 255, 0.5);
 				color: #fff;
-				content: 'Go To GitHub';
+				content: 'Go To Project';
 				display: inline-block;
 				font-size: 0.8em;
 				font-weight: 400;
 				left: 50%;
 				line-height: 2.25em;
-				margin: -1.2em 0 0 -4em;
+				margin: -1em 0 0 -4em;
 				opacity: 0;
 				padding: 0 1.5em;
 				position: absolute;

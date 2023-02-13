@@ -37,16 +37,17 @@
         var hash = sha1(secret)
         // var url = hash + "/index.html"
         var url = hash
-        var alert = document.querySelectorAll('[data-id="alert"]')
 
         var request = new XMLHttpRequest()
         request.open('GET', url, true)
 
         request.onload = function () {
             if (request.status >= 200 && request.status < 400) {
+                console.log("Nav good")
                 window.location = url
             } else {
-                Window.alert("Sorry, wrong password!")
+                console.log("Sorry, wrong password! 1")
+                alert("Sorry, wrong password!")
                 // parent.location.hash = hash
                 // alert[0].style.display = 'block'
                 // password[0].setAttribute('placeholder', 'Incorrect password')
@@ -54,7 +55,8 @@
             }
         }
         request.onerror = function () {
-            Window.alert("Sorry, wrong password!")
+            console.log("Sorry, wrong password! 2")
+            alert("Sorry, wrong password!")
             // parent.location.hash = hash
             // alert[0].style.display = 'block'
             // password[0].setAttribute('placeholder', 'Incorrect password')

@@ -38,10 +38,13 @@
         // var url = hash + "/index.html"
         var url = hash
 
+        console.log(url)
+
         var request = new XMLHttpRequest()
         request.open('GET', url, true)
 
         request.onload = function () {
+            console.log("onload")
             if (request.status >= 200 && request.status < 400) {
                 console.log("Nav good")
                 window.location = url

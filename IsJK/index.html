@@ -20,9 +20,9 @@
             alt="Door"
             />
             <div class="z-20">
-                <form>
-                    <input id="pwi" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-32 bg-transparent shadow appearance-none border rounded py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline" type="password" placeholder="">
-                    <button class="absolute top-1/2 left-1/2 translate-x-16 translate-y-10 bg-transparent hover:bg-slate-50/50 text-yellow-300 bg-yellow-600 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" onclick="login(document.getElementById('pwi').value);">
+                <form id="loginForm" onsubmit="event.preventDefault(); login()">
+                    <input class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-32 bg-transparent shadow appearance-none border rounded py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="">
+                    <button class="absolute top-1/2 left-1/2 translate-x-16 translate-y-10 bg-transparent hover:bg-slate-50/50 text-yellow-300 bg-yellow-600 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
                         Enter
                     </button>
                 </form>
@@ -32,8 +32,11 @@
 </html>
 
 <script>
-    function login(secret) {
-        if(secret === "mattisthecoolest"){
+    function login() {
+        password = document.forms["loginForm"]["password"].value
+        console.log(password)
+        if(password === "mattisthecoolest"){
+            console.log("success")
             window.location = "/IsJK/Valentine"
         }
         else{

@@ -5,28 +5,19 @@
     <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.tailwindcss.com"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha1/0.6.0/sha1.js" integrity="sha512-ZUQ7+HkNWupEjDn/vKkEmGB0Pjr4nrCWzneUGMTLLjBc2mrohsyfRBVU4VWX6bHGE4IaBRjy0q2tuqtDZcgQyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </head>
-    <body>
-        <div class="flex h-screen">
-            <img
-            src="../images/galaxy.jpg"
-            class="absolute h-screen w-screen z-0"
-            alt="Galaxy"
-            />
+    <body class="bg-cover bg-[url('../images/galaxy.jpg')] min-h-screen flex flex-col justify-center items-center">
+        <div class="relative">
+            <form class="flex flex-col items-center" id="loginForm" onsubmit="event.preventDefault(); login()">
+                <input class="absolute w-52 top-28 bg-transparent shadow appearance-none border rounded py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="">
+                <button class="absolute top-1/2 left-2/3 bg-transparent hover:bg-slate-50/50 text-yellow-300 bg-yellow-600 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                    Enter
+                </button>
+            </form>
             <img
             src="../images/Medieval_Castle_Gate.png"
-            class="m-auto z-10"
             alt="Door"
             />
-            <div class="z-20">
-                <form id="loginForm" onsubmit="event.preventDefault(); login()">
-                    <input class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-32 bg-transparent shadow appearance-none border rounded py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="">
-                    <button class="absolute top-1/2 left-1/2 translate-x-16 translate-y-10 bg-transparent hover:bg-slate-50/50 text-yellow-300 bg-yellow-600 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-                        Enter
-                    </button>
-                </form>
-            </div>
         </div>
     </body>
 </html>

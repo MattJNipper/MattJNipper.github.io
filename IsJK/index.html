@@ -21,7 +21,7 @@
             />
             <div class="z-20">
                 <form>
-                    <input id="pwi" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-32 bg-transparent shadow appearance-none border rounded py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="">
+                    <input id="pwi" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-32 bg-transparent shadow appearance-none border rounded py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline" type="password" placeholder="">
                     <button class="absolute top-1/2 left-1/2 translate-x-16 translate-y-10 bg-transparent hover:bg-slate-50/50 text-yellow-300 bg-yellow-600 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" onclick="login(document.getElementById('pwi').value);">
                         Enter
                     </button>
@@ -33,34 +33,35 @@
 
 <script>
     function login(secret) {
-            var hash = sha1(secret)
-            // var url = hash + "/index.html"
-            var url = hash
-            var alert = document.querySelectorAll('[data-id="alert"]')
+        console.log("login")
+        var hash = sha1(secret)
+        // var url = hash + "/index.html"
+        var url = hash
+        var alert = document.querySelectorAll('[data-id="alert"]')
 
-            var request = new XMLHttpRequest()
-            request.open('GET', url, true)
+        var request = new XMLHttpRequest()
+        request.open('GET', url, true)
 
-            request.onload = function () {
-                if (request.status >= 200 && request.status < 400) {
-                    window.location = url
-                } else {
-                    alert("Sorry, wrong password!")
-                    // parent.location.hash = hash
-                    // alert[0].style.display = 'block'
-                    // password[0].setAttribute('placeholder', 'Incorrect password')
-                    // password[0].value = ''
-                }
-            }
-            request.onerror = function () {
-                alert("Sorry, wrong password!")
+        request.onload = function () {
+            if (request.status >= 200 && request.status < 400) {
+                window.location = url
+            } else {
+                Window.alert("Sorry, wrong password!")
                 // parent.location.hash = hash
                 // alert[0].style.display = 'block'
                 // password[0].setAttribute('placeholder', 'Incorrect password')
                 // password[0].value = ''
             }
-            request.send()
         }
+        request.onerror = function () {
+            Window.alert("Sorry, wrong password!")
+            // parent.location.hash = hash
+            // alert[0].style.display = 'block'
+            // password[0].setAttribute('placeholder', 'Incorrect password')
+            // password[0].value = ''
+        }
+        request.send()
+    }
 
     // var button = document.getElementById("EnterBtn")
     // button.addEventListener("click", function () {

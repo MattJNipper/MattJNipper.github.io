@@ -9,9 +9,20 @@
         <style>@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&display=swap');</style>
     </head>
     <body class="bg-cover bg-[url('../../images/galaxy.jpg')] min-h-screen flex flex-col justify-center items-center">
-        <video class="h-[25rem] md:h-[40em]" autoplay playsinline muted>
+        <video id="video" class="h-[25rem] md:h-[40em]" autoplay playsinline muted>
             <source src="../../assets/video/flower.mp4" type="video/mp4">
         </video>
-        <p class="text-center mt-8 text-5xl lg:text-7xl text-orange-700 font-['Corinthia']">Happy Valentines Day</p>
+        <p id="text2" style="visibility: hidden" class="text-center mt-8 text-5xl lg:text-7xl text-orange-700 font-['Corinthia']">Happy Valentines Day</p>
     </body>
 </html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', e => {
+        var video = document.getElementById("video");
+        var text2 = document.getElementById("text2");
+
+        video.addEventListener('ended', e => {
+            text2.style.visibility = "visible";
+        });
+    });
+</script>
